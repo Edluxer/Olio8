@@ -26,14 +26,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void USDButton(View view) {
-        double euro = Integer.parseInt(EuroInput.getText().toString());
-        double res = euro * 1.05;
-        ResultText.setText(String.format("$%.2f", res));
+        try {
+            double euro = Double.parseDouble(EuroInput.getText().toString());
+            double res = euro * 1.05;
+            ResultText.setText(String.format("$%.2f", res));
+        }
+        catch (NumberFormatException e) {
+            ResultText.setText("Virhe luvun annossa.");
+        }
+
     }
 
     public void GDPButton(View view) {
-        double euro = Integer.parseInt(EuroInput.getText().toString());
-        double res = euro * 0.83;
-        ResultText.setText(String.format("£%.2f", res));
+        try {
+            double euro = Double.parseDouble(EuroInput.getText().toString());
+            double res = euro * 0.83;
+            ResultText.setText(String.format("£%.2f", res));
+        }
+        catch (NumberFormatException e) {
+            ResultText.setText("Virhe luvun annossa.");
+        }
     }
 }
