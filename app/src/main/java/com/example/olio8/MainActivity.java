@@ -1,0 +1,39 @@
+package com.example.olio8;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    private EditText EuroInput;
+    private TextView ResultText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        EuroInput = findViewById(R.id.EditText);
+        ResultText = findViewById(R.id.TextView);
+    }
+
+    public void USDButton(View view) {
+        double euro = Integer.parseInt(EuroInput.getText().toString());
+        double res = euro * 1.05;
+        ResultText.setText(String.format("$%.2f", res));
+    }
+
+    public void GDPButton(View view) {
+        double euro = Integer.parseInt(EuroInput.getText().toString());
+        double res = euro * 0.83;
+        ResultText.setText(String.format("£%.2f", res));
+    }
+}
