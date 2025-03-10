@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EuroInput = findViewById(R.id.EditText);
-        ResultText = findViewById(R.id.TextView);
+        EuroInput = findViewById(R.id.EuroInput);
+        ResultText = findViewById(R.id.ResultText);
     }
 
     public void USDButton(View view) {
@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
         catch (NumberFormatException e) {
             ResultText.setText("Virhe luvun annossa.");
         }
-
     }
-
     public void GDPButton(View view) {
         try {
             double euro = Double.parseDouble(EuroInput.getText().toString());
